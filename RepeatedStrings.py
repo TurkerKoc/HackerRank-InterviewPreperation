@@ -16,20 +16,22 @@ import sys
 #
 
 def repeatedString(s, n):
-    aInS = 0
-    for letter in s:
+    aInS = 0 #number of a's in s
+    for letter in s: #finding number of a's in s
         if letter == "a":
             aInS += 1
-    mult = int(n/(len(s)))
-    
-    aInAll = aInS * mult
 
-    leftLength = n%len(s)
+    mult = int(n/(len(s))) #finding how many s string exist in n length
+    
+    aInAll = aInS * mult #find a in all
+
+    leftLength = n%len(s) #finding a in last s (can be smaller than lenght of s)
     aInLeft = 0
     for i in range(leftLength):
         if s[i] == "a":
             aInLeft += 1
-    aInAll += aInLeft
+
+    aInAll += aInLeft #add a's in last s
     return aInAll
 
 if __name__ == '__main__':
