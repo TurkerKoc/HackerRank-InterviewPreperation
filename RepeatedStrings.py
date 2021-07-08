@@ -16,15 +16,21 @@ import sys
 #
 
 def repeatedString(s, n):
+    aInS = 0
+    for letter in s:
+        if letter == "a":
+            aInS += 1
     mult = int(n/(len(s)))
-    s = s * (mult+1)
-    s = s[:n]
-    print(s)
-    occurence = 0
-    for i in range(len(s)):
+    
+    aInAll = aInS * mult
+
+    leftLength = n%len(s)
+    aInLeft = 0
+    for i in range(leftLength):
         if s[i] == "a":
-            occurence += 1
-    return occurence
+            aInLeft += 1
+    aInAll += aInLeft
+    return aInAll
 
 if __name__ == '__main__':
 
